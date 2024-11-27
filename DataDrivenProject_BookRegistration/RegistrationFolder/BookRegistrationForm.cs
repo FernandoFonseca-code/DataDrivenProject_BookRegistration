@@ -1,8 +1,8 @@
 namespace DataDrivenProject_BookRegistration
 {
-    public partial class Form1 : Form
+    public partial class BookRegistrationForm : Form
     {
-        public Form1()
+        public BookRegistrationForm()
         {
             InitializeComponent();
         }
