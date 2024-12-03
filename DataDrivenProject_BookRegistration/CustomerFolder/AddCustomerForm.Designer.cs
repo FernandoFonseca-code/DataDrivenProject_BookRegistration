@@ -35,91 +35,114 @@
             dtpDateOfBirth = new DateTimePicker();
             label3 = new Label();
             btnAddCustomer = new Button();
-            txtFirstNameError = new TextBox();
-            txtLastNameError = new TextBox();
+            lblFirstNameError = new Label();
+            lblLastNameError = new Label();
+            lblDateOfBirthError = new Label();
             SuspendLayout();
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new Point(157, 104);
+            txtFirstName.Location = new Point(294, 192);
+            txtFirstName.Margin = new Padding(6);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(127, 27);
+            txtFirstName.Size = new Size(235, 43);
             txtFirstName.TabIndex = 0;
             // 
             // txtLastName
             // 
-            txtLastName.Location = new Point(154, 193);
+            txtLastName.Location = new Point(289, 357);
+            txtLastName.Margin = new Padding(6);
             txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(125, 27);
+            txtLastName.Size = new Size(231, 43);
             txtLastName.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(48, 111);
+            label1.Location = new Point(90, 205);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(83, 20);
+            label1.Size = new Size(150, 37);
             label1.TabIndex = 3;
             label1.Text = "First Name:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(49, 200);
+            label2.Location = new Point(92, 370);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(82, 20);
+            label2.Size = new Size(148, 37);
             label2.TabIndex = 4;
             label2.Text = "Last Name:";
             // 
             // dtpDateOfBirth
             // 
-            dtpDateOfBirth.Location = new Point(154, 267);
+            dtpDateOfBirth.Location = new Point(289, 494);
+            dtpDateOfBirth.Margin = new Padding(6);
             dtpDateOfBirth.Name = "dtpDateOfBirth";
-            dtpDateOfBirth.Size = new Size(273, 27);
+            dtpDateOfBirth.Size = new Size(508, 43);
             dtpDateOfBirth.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 274);
+            label3.Location = new Point(64, 507);
+            label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(97, 20);
+            label3.Size = new Size(172, 37);
             label3.TabIndex = 6;
             label3.Text = "Date of Birth:";
             // 
             // btnAddCustomer
             // 
-            btnAddCustomer.Location = new Point(157, 336);
+            btnAddCustomer.Location = new Point(294, 622);
+            btnAddCustomer.Margin = new Padding(6);
             btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(161, 79);
+            btnAddCustomer.Size = new Size(302, 146);
             btnAddCustomer.TabIndex = 7;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
             btnAddCustomer.Click += btnAddCustomer_Click;
             // 
-            // txtFirstNameError
+            // lblFirstNameError
             // 
-            txtFirstNameError.Enabled = false;
-            txtFirstNameError.Location = new Point(331, 106);
-            txtFirstNameError.Name = "txtFirstNameError";
-            txtFirstNameError.Size = new Size(125, 27);
-            txtFirstNameError.TabIndex = 8;
+            lblFirstNameError.AutoSize = true;
+            lblFirstNameError.Enabled = false;
+            lblFirstNameError.ForeColor = Color.Red;
+            lblFirstNameError.Location = new Point(605, 192);
+            lblFirstNameError.Name = "lblFirstNameError";
+            lblFirstNameError.Size = new Size(0, 37);
+            lblFirstNameError.TabIndex = 11;
             // 
-            // txtLastNameError
+            // lblLastNameError
             // 
-            txtLastNameError.Enabled = false;
-            txtLastNameError.Location = new Point(332, 197);
-            txtLastNameError.Name = "txtLastNameError";
-            txtLastNameError.Size = new Size(125, 27);
-            txtLastNameError.TabIndex = 9;
+            lblLastNameError.AutoSize = true;
+            lblLastNameError.Enabled = false;
+            lblLastNameError.ForeColor = Color.Red;
+            lblLastNameError.Location = new Point(605, 357);
+            lblLastNameError.Name = "lblLastNameError";
+            lblLastNameError.Size = new Size(0, 37);
+            lblLastNameError.TabIndex = 12;
+            // 
+            // lblDateOfBirthError
+            // 
+            lblDateOfBirthError.AutoSize = true;
+            lblDateOfBirthError.Enabled = false;
+            lblDateOfBirthError.ForeColor = Color.Red;
+            lblDateOfBirthError.Location = new Point(846, 495);
+            lblDateOfBirthError.Name = "lblDateOfBirthError";
+            lblDateOfBirthError.Size = new Size(0, 37);
+            lblDateOfBirthError.TabIndex = 13;
             // 
             // AddCustomerForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(767, 450);
-            Controls.Add(txtLastNameError);
-            Controls.Add(txtFirstNameError);
+            ClientSize = new Size(1438, 832);
+            Controls.Add(lblDateOfBirthError);
+            Controls.Add(lblLastNameError);
+            Controls.Add(lblFirstNameError);
             Controls.Add(btnAddCustomer);
             Controls.Add(label3);
             Controls.Add(dtpDateOfBirth);
@@ -127,6 +150,7 @@
             Controls.Add(label1);
             Controls.Add(txtLastName);
             Controls.Add(txtFirstName);
+            Margin = new Padding(6);
             Name = "AddCustomerForm";
             Text = "Add Customer Form";
             ResumeLayout(false);
@@ -142,7 +166,8 @@
         private DateTimePicker dtpDateOfBirth;
         private Label label3;
         private Button btnAddCustomer;
-        private TextBox txtFirstNameError;
-        private TextBox txtLastNameError;
+        private Label lblFirstNameError;
+        private Label lblLastNameError;
+        private Label lblDateOfBirthError;
     }
 }

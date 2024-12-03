@@ -11,7 +11,7 @@ namespace DataDrivenProject_BookRegistration
     {
         public static bool ValidateCustomerFirstName(String FirstName)
         {
-            if (FirstName.Length == 0 || FirstName == null)
+            if (String.IsNullOrWhiteSpace(FirstName.Trim()))
             {
                 return false;
             }
@@ -19,8 +19,8 @@ namespace DataDrivenProject_BookRegistration
         }
         public static bool ValidateCustomerLastName(String LastName)
         {
-                if (LastName.Length == 0 || LastName == null)
-                {
+                if (String.IsNullOrWhiteSpace(LastName.Trim()))
+            {
                     return false;
                 }
                 return true;

@@ -22,7 +22,7 @@ namespace DataDrivenProject_BookRegistration
         {
             FirstName = fname;
             LastName = lname;
-            DateOfBirth = dob;
+            DateOfBirth = dob.Date;
         }
 
         public string FirstName
@@ -35,11 +35,11 @@ namespace DataDrivenProject_BookRegistration
             {
                 if (CustomerValidation.ValidateCustomerFirstName(value))
                 {
-                    _firstName = value;
+                    _firstName = value.Trim();
                 }
                 else
                 {
-                    MessageBox.Show("First name cannot be empty or null","Entry Error");
+                    throw new ArgumentException("* First name cannot be empty or null");
                 }
             }
         }
@@ -54,11 +54,11 @@ namespace DataDrivenProject_BookRegistration
             {
                 if (CustomerValidation.ValidateCustomerLastName(value))
                 {
-                    _lastName = value;
+                    _lastName = value.Trim();
                 }
                 else
                 {
-                    MessageBox.Show("Last name cannot be empty or null","Entry Error");
+                    throw new ArgumentException("* Last name cannot be empty or null");
                 }
             }
         }
@@ -73,11 +73,11 @@ namespace DataDrivenProject_BookRegistration
             {
                 if (CustomerValidation.ValidateCustomerDateOfBirth(value))
                 {
-                    _dateOfBirth = value;
+                    _dateOfBirth = value.Date;
                 }
                 else
                 {
-                    MessageBox.Show("You must be 18 or older to register a book");
+                    throw new ArgumentException("* You must be 18 or older to register a book");
                 }
             }
         }

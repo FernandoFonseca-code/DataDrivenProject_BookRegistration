@@ -20,8 +20,35 @@ namespace DataDrivenProject_BookRegistration
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-           Customer newCustomer = new Customer(txtFirstName.Text, txtLastName.Text, dtpDateOfBirth.Value);
-            MessageBox.Show($"First name is {newCustomer.FirstName} and last name is {newCustomer.LastName} with a Date of Birth of {newCustomer.DateOfBirth}");
+            try
+            {
+                Customer newCustomer = new Customer(txtFirstName.Text, txtLastName.Text, dtpDateOfBirth.Value);
+                // test code
+                MessageBox.Show($"First name is {newCustomer.FirstName} and last name is {newCustomer.LastName} with a Date of Birth of {newCustomer.DateOfBirth.Date}");
+            }
+            catch (ArgumentException exception)
+            {
+                var error = exception.Message;
+                switch (exception.Message)
+                {
+                    case "* First name cannot be empty or null":
+                        lblFirstNameError.Text = exception.Message;
+                        txtFirstName.Focus();
+                        break;
+                    case "* Last name cannot be empty or null":
+                        lblLastNameError.Text = exception.Message;
+                        txtLastName.Focus();
+                        break;
+                    case "* You must be 18 or older to register a book":
+                        lblDateOfBirthError.Text = exception.Message;
+                        dtpDateOfBirth.Focus();
+                        break;
+                    default:
+                        MessageBox.Show(exception.Message, "Entry Error");
+                        break;
+                }
+                
+            }
         }
     }
 }
