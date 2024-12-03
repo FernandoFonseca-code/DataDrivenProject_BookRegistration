@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataDrivenProject_BookRegistration.Customer
+namespace DataDrivenProject_BookRegistration
 {
     internal static class CustomerTable
     {
+
+
+      
     }
 }

@@ -35,6 +35,8 @@
             dtpDateOfBirth = new DateTimePicker();
             label3 = new Label();
             btnAddCustomer = new Button();
+            txtFirstNameError = new TextBox();
+            txtLastNameError = new TextBox();
             SuspendLayout();
             // 
             // txtFirstName
@@ -93,12 +95,31 @@
             btnAddCustomer.TabIndex = 7;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += btnAddCustomer_Click;
+            // 
+            // txtFirstNameError
+            // 
+            txtFirstNameError.Enabled = false;
+            txtFirstNameError.Location = new Point(331, 106);
+            txtFirstNameError.Name = "txtFirstNameError";
+            txtFirstNameError.Size = new Size(125, 27);
+            txtFirstNameError.TabIndex = 8;
+            // 
+            // txtLastNameError
+            // 
+            txtLastNameError.Enabled = false;
+            txtLastNameError.Location = new Point(332, 197);
+            txtLastNameError.Name = "txtLastNameError";
+            txtLastNameError.Size = new Size(125, 27);
+            txtLastNameError.TabIndex = 9;
             // 
             // AddCustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(494, 450);
+            ClientSize = new Size(767, 450);
+            Controls.Add(txtLastNameError);
+            Controls.Add(txtFirstNameError);
             Controls.Add(btnAddCustomer);
             Controls.Add(label3);
             Controls.Add(dtpDateOfBirth);
@@ -121,5 +142,7 @@
         private DateTimePicker dtpDateOfBirth;
         private Label label3;
         private Button btnAddCustomer;
+        private TextBox txtFirstNameError;
+        private TextBox txtLastNameError;
     }
 }

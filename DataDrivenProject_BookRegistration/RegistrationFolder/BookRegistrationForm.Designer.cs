@@ -1,4 +1,5 @@
-﻿namespace DataDrivenProject_BookRegistration
+﻿
+namespace DataDrivenProject_BookRegistration
 {
     partial class BookRegistrationForm
     {
@@ -68,6 +69,7 @@
             btnAddCustomer.TabIndex = 3;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += btnAddCustomer_Click;
             // 
             // btnAddBook
             // 
@@ -77,6 +79,7 @@
             btnAddBook.TabIndex = 4;
             btnAddBook.Text = "Add Book";
             btnAddBook.UseVisualStyleBackColor = true;
+            btnAddBook.Click += btnAddBook_Click;
             // 
             // btnRegisterBook
             // 

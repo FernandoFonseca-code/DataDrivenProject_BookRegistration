@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataDrivenProject_BookRegistration.BookFolder
+namespace DataDrivenProject_BookRegistration
 {
     internal static class BookTable
     {

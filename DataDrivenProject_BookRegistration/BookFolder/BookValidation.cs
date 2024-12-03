@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataDrivenProject_BookRegistration
 {
-    internal static class BookRegistrationTable
+    internal class BookValidation
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataDrivenProject_BookRegistration.RegistrationFolder
+namespace DataDrivenProject_BookRegistration
 {
     internal class Registered
     {
