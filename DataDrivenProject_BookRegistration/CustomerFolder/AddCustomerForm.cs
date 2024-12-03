@@ -22,15 +22,23 @@ namespace DataDrivenProject_BookRegistration
         {
             try
             {
-                Customer newCustomer = new Customer(txtFirstName.Text, txtLastName.Text, dtpDateOfBirth.Value);
+                Customer newCustomer = new(cbxTitle, txtFirstName.Text, txtLastName.Text, dtpDateOfBirth.Value);
                 // test code
-                MessageBox.Show($"First name is {newCustomer.FirstName} and last name is {newCustomer.LastName} with a Date of Birth of {newCustomer.DateOfBirth.Date}");
+                //MessageBox.Show($"Title is {cbxTitle.Text} First name is {newCustomer.FirstName} and last name is {newCustomer.LastName} with a Date of Birth of {newCustomer.DateOfBirth.ToString("d")}");
+                CustomerTable.Add(newCustomer);
+                CustomerTable.GetAllCustomers();
+                Close();
+                
             }
             catch (ArgumentException exception)
             {
                 var error = exception.Message;
                 switch (exception.Message)
                 {
+                    case "* Please select a title":
+                        lblTitleError.Text = exception.Message;
+                        cbxTitle.Focus();
+                        break;
                     case "* First name cannot be empty or null":
                         lblFirstNameError.Text = exception.Message;
                         txtFirstName.Focus();
@@ -47,7 +55,6 @@ namespace DataDrivenProject_BookRegistration
                         MessageBox.Show(exception.Message, "Entry Error");
                         break;
                 }
-                
             }
         }
     }

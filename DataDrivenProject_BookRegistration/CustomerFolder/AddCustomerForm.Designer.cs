@@ -38,22 +38,25 @@
             lblFirstNameError = new Label();
             lblLastNameError = new Label();
             lblDateOfBirthError = new Label();
+            label4 = new Label();
+            cbxTitle = new ComboBox();
+            lblTitleError = new Label();
             SuspendLayout();
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new Point(294, 192);
+            txtFirstName.Location = new Point(294, 199);
             txtFirstName.Margin = new Padding(6);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(235, 43);
+            txtFirstName.Size = new Size(267, 43);
             txtFirstName.TabIndex = 0;
             // 
             // txtLastName
             // 
-            txtLastName.Location = new Point(289, 357);
+            txtLastName.Location = new Point(289, 364);
             txtLastName.Margin = new Padding(6);
             txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(231, 43);
+            txtLastName.Size = new Size(272, 43);
             txtLastName.TabIndex = 1;
             // 
             // label1
@@ -78,10 +81,10 @@
             // 
             // dtpDateOfBirth
             // 
-            dtpDateOfBirth.Location = new Point(289, 494);
+            dtpDateOfBirth.Location = new Point(289, 501);
             dtpDateOfBirth.Margin = new Padding(6);
             dtpDateOfBirth.Name = "dtpDateOfBirth";
-            dtpDateOfBirth.Size = new Size(508, 43);
+            dtpDateOfBirth.Size = new Size(469, 43);
             dtpDateOfBirth.TabIndex = 5;
             // 
             // label3
@@ -135,11 +138,40 @@
             lblDateOfBirthError.Size = new Size(0, 37);
             lblDateOfBirthError.TabIndex = 13;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(162, 104);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 37);
+            label4.TabIndex = 14;
+            label4.Text = "Title:";
+            // 
+            // cbxTitle
+            // 
+            cbxTitle.FormattingEnabled = true;
+            cbxTitle.Items.AddRange(new object[] { "Mr.", "Mrs.", "Ms.", "Miss.", "Dr.", "Prof.", "Hon.", "Rev." });
+            cbxTitle.Location = new Point(289, 96);
+            cbxTitle.Name = "cbxTitle";
+            cbxTitle.Size = new Size(272, 45);
+            cbxTitle.TabIndex = 15;
+            // 
+            // lblTitleError
+            // 
+            lblTitleError.AutoSize = true;
+            lblTitleError.Location = new Point(618, 103);
+            lblTitleError.Name = "lblTitleError";
+            lblTitleError.Size = new Size(0, 37);
+            lblTitleError.TabIndex = 16;
+            // 
             // AddCustomerForm
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1438, 832);
+            Controls.Add(lblTitleError);
+            Controls.Add(cbxTitle);
+            Controls.Add(label4);
             Controls.Add(lblDateOfBirthError);
             Controls.Add(lblLastNameError);
             Controls.Add(lblFirstNameError);
@@ -169,5 +201,8 @@
         private Label lblFirstNameError;
         private Label lblLastNameError;
         private Label lblDateOfBirthError;
+        private Label label4;
+        private ComboBox cbxTitle;
+        private Label lblTitleError;
     }
 }

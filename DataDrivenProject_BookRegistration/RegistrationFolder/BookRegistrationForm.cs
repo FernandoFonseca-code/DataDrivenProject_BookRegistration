@@ -5,6 +5,14 @@ namespace DataDrivenProject_BookRegistration
         public BookRegistrationForm()
         {
             InitializeComponent();
+            this.Load += new EventHandler(BookRegistrationForm_Load);
+        }
+        private void BookRegistrationForm_Load(object sender, EventArgs e)
+        {
+            List<Customer> customers = CustomerTable.GetAllCustomers();
+            cbxCustomer.DataSource = customers;
+            cbxCustomer.DisplayMember = "FullName";
+            cbxCustomer.ValueMember = "CustomerID";
         }
         private void btnAddBook_Click(object sender, EventArgs e)
         {

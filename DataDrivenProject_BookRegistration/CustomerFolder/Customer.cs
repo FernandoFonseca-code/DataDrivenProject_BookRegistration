@@ -13,18 +13,51 @@ namespace DataDrivenProject_BookRegistration
     /// </summary>
     internal class Customer
     {
-        private int _customerId;
+        private int _customerID;
+        private string _title;
         private string _firstName;
         private string _lastName;
         private DateTime _dateOfBirth;
-
-        public Customer(string fname, string lname, DateTime dob)
+        public string FullName
         {
+            get { return $"{LastName}, {FirstName}"; }
+        }
+
+        public int CustomerID
+        {
+            get { return _customerID; }
+            set { _customerID = value; }
+        }
+        public Customer(ComboBox title, string fname, string lname, DateTime dob)
+        {
+            Title = title.Text;
             FirstName = fname;
             LastName = lname;
             DateOfBirth = dob.Date;
         }
 
+        public Customer()
+        {
+        }
+
+        public string Title
+        {
+            get
+            {
+                return _title;
+            }
+            set
+            {
+                if (CustomerValidation.ValidateCustomerTitle(value))
+                {
+                    _title = value;
+                }
+                else
+                {
+                    throw new ArgumentException("* Please select a title");
+                }
+            }
+        }
         public string FirstName
         {
             get

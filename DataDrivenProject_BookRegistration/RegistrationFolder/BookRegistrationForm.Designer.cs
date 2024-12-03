@@ -108,8 +108,8 @@ namespace DataDrivenProject_BookRegistration
 
         #endregion
 
-        private ComboBox cbxCustomer;
-        private ComboBox cbxBook;
+        public ComboBox cbxCustomer;
+        public ComboBox cbxBook;
         private ComboBox cbxRegistrationDate;
         private Button btnAddCustomer;
         private Button btnAddBook;

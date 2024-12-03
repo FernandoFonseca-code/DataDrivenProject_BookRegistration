@@ -9,6 +9,14 @@ namespace DataDrivenProject_BookRegistration
 {
     internal class CustomerValidation
     {
+        public static bool ValidateCustomerTitle(String Title)
+        {
+            if (String.IsNullOrWhiteSpace(Title))
+            {
+                return false;
+            }
+            return true;
+        }
         public static bool ValidateCustomerFirstName(String FirstName)
         {
             if (String.IsNullOrWhiteSpace(FirstName.Trim()))
