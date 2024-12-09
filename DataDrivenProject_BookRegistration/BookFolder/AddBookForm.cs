@@ -16,5 +16,39 @@ namespace DataDrivenProject_BookRegistration
         {
             InitializeComponent();
         }
+
+        private void btnAddBook_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Book newBook = new(txtBookISBN.Text, txtBookTitle.Text, double.Parse(numbxBookPrice.Text));
+                // test code
+                //MessageBox.Show($"Title of book is {txtBookTitle.Text} with ISBN {txtBookISBN.Text} and a price of ${numbxBookPrice.Text}");
+                //BookTable.Add(newBook);
+                /BookTable.GetAllBooks();
+                Close();
+            }
+
+            catch (ArgumentException exception)
+            {
+                var error = exception.Message;
+                switch (exception.Message)
+                {
+                    case "* Please enter a valid 10 or 13 digit ISBN":
+                        lblBookISBNError.Text = exception.Message;
+                        txtBookISBN.Focus();
+                        break;
+                    case "* Title cannot be empty or null":
+                        lblBookTitleError.Text = exception.Message;
+                        txtBookTitle.Focus();
+                        break;
+                    case "* Price cannot be empty or null":
+                        lblBookPriceError.Text = exception.Message;
+                        numbxBookPrice.Focus();
+                        break;
+                }
+            }
+        }
     }
 }
+

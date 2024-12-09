@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace DataDrivenProject_BookRegistration
 {
     public partial class AddCustomerForm : Form
@@ -28,8 +27,8 @@ namespace DataDrivenProject_BookRegistration
                 CustomerTable.Add(newCustomer);
                 CustomerTable.GetAllCustomers();
                 Close();
-                
             }
+
             catch (ArgumentException exception)
             {
                 var error = exception.Message;

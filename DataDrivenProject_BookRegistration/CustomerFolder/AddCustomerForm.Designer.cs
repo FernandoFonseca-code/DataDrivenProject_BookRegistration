@@ -112,7 +112,8 @@
             // 
             lblFirstNameError.AutoSize = true;
             lblFirstNameError.Enabled = false;
-            lblFirstNameError.ForeColor = Color.Red;
+            lblFirstNameError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblFirstNameError.ForeColor = SystemColors.WindowText;
             lblFirstNameError.Location = new Point(605, 192);
             lblFirstNameError.Name = "lblFirstNameError";
             lblFirstNameError.Size = new Size(0, 37);
@@ -122,7 +123,8 @@
             // 
             lblLastNameError.AutoSize = true;
             lblLastNameError.Enabled = false;
-            lblLastNameError.ForeColor = Color.Red;
+            lblLastNameError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblLastNameError.ForeColor = SystemColors.WindowText;
             lblLastNameError.Location = new Point(605, 357);
             lblLastNameError.Name = "lblLastNameError";
             lblLastNameError.Size = new Size(0, 37);
@@ -132,7 +134,8 @@
             // 
             lblDateOfBirthError.AutoSize = true;
             lblDateOfBirthError.Enabled = false;
-            lblDateOfBirthError.ForeColor = Color.Red;
+            lblDateOfBirthError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblDateOfBirthError.ForeColor = SystemColors.WindowText;
             lblDateOfBirthError.Location = new Point(846, 495);
             lblDateOfBirthError.Name = "lblDateOfBirthError";
             lblDateOfBirthError.Size = new Size(0, 37);
@@ -159,6 +162,8 @@
             // lblTitleError
             // 
             lblTitleError.AutoSize = true;
+            lblTitleError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblTitleError.ForeColor = SystemColors.WindowText;
             lblTitleError.Location = new Point(618, 103);
             lblTitleError.Name = "lblTitleError";
             lblTitleError.Size = new Size(0, 37);

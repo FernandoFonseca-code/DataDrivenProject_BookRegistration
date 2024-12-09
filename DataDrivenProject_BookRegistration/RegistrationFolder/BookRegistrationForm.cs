@@ -9,22 +9,35 @@ namespace DataDrivenProject_BookRegistration
         }
         private void BookRegistrationForm_Load(object sender, EventArgs e)
         {
+            RefreshCustomerList();
+        }
+        /// <summary>
+        /// Get all customers list from the database and display them in the combobox
+        /// </summary>
+        private void RefreshCustomerList()
+        {
             List<Customer> customers = CustomerTable.GetAllCustomers();
             cbxCustomer.DataSource = customers;
             cbxCustomer.DisplayMember = "FullName";
             cbxCustomer.ValueMember = "CustomerID";
         }
-        private void btnAddBook_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// Open the AddCustomerForm to add a new customer to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            // open addCustomerForm and add customer to the database
-            AddCustomerForm newCustomerForm = new AddCustomerForm();
+            AddCustomerForm newCustomerForm = new();
             newCustomerForm.ShowDialog();
+            RefreshCustomerList();
 
+        }
+        private void btnAddBook_Click(object sender, EventArgs e)
+        {
+            AddBookForm newBookForm = new();
+            newBookForm.ShowDialog();
+            //RefreshBookList();
         }
     }
 }
