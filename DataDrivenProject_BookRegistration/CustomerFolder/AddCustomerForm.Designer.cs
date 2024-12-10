@@ -162,6 +162,7 @@
             // lblTitleError
             // 
             lblTitleError.AutoSize = true;
+            lblTitleError.Enabled = false;
             lblTitleError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblTitleError.ForeColor = SystemColors.WindowText;
             lblTitleError.Location = new Point(618, 103);

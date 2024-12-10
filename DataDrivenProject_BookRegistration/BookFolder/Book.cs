@@ -12,6 +12,10 @@ namespace DataDrivenProject_BookRegistration
         private string _bookTitle;
         private double _price;
 
+        public Book()
+        {
+        }
+
         public Book(string bookISBN, string bookTitle, double price)
         {
             BookISBN = bookISBN;
@@ -52,7 +56,7 @@ namespace DataDrivenProject_BookRegistration
                 }
                 else
                 {
-                    throw new ArgumentException("* Title cannot be empty or null");
+                    throw new ArgumentException("* Title cannot be empty/null");
                 }
             }
         }
@@ -71,7 +75,7 @@ namespace DataDrivenProject_BookRegistration
                 }
                 else
                 {
-                    throw new ArgumentException("* Price cannot be empty or null and more than zero");
+                    throw new ArgumentException("* Price cannot be empty/null or free");
                 }
             }
         }

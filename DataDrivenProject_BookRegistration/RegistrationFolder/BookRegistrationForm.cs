@@ -10,6 +10,7 @@ namespace DataDrivenProject_BookRegistration
         private void BookRegistrationForm_Load(object sender, EventArgs e)
         {
             RefreshCustomerList();
+            RefreshBookList();
         }
         /// <summary>
         /// Get all customers list from the database and display them in the combobox
@@ -20,6 +21,16 @@ namespace DataDrivenProject_BookRegistration
             cbxCustomer.DataSource = customers;
             cbxCustomer.DisplayMember = "FullName";
             cbxCustomer.ValueMember = "CustomerID";
+        }
+        /// <summary>
+        /// Get all books list from the database and display them in the combobox
+        /// </summary>
+        private void RefreshBookList()
+        {
+            List<Book> books = BookTable.GetAllBooks();
+            cbxBook.DataSource = books;
+            cbxBook.DisplayMember = "BookTitle";
+            cbxBook.ValueMember = "BookISBN";
         }
         /// <summary>
         /// Open the AddCustomerForm to add a new customer to the database
@@ -37,7 +48,7 @@ namespace DataDrivenProject_BookRegistration
         {
             AddBookForm newBookForm = new();
             newBookForm.ShowDialog();
-            //RefreshBookList();
+            RefreshBookList();
         }
     }
 }

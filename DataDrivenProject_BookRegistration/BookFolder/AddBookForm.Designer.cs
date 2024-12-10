@@ -111,8 +111,10 @@
             // lblBookISBNError
             // 
             lblBookISBNError.AutoSize = true;
+            lblBookISBNError.Enabled = false;
             lblBookISBNError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblBookISBNError.Location = new Point(601, 149);
+            lblBookISBNError.ForeColor = SystemColors.WindowText;
+            lblBookISBNError.Location = new Point(575, 149);
             lblBookISBNError.Name = "lblBookISBNError";
             lblBookISBNError.Size = new Size(0, 37);
             lblBookISBNError.TabIndex = 8;
@@ -120,7 +122,9 @@
             // lblBookTitleError
             // 
             lblBookTitleError.AutoSize = true;
+            lblBookTitleError.Enabled = false;
             lblBookTitleError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblBookTitleError.ForeColor = SystemColors.WindowText;
             lblBookTitleError.Location = new Point(680, 325);
             lblBookTitleError.Name = "lblBookTitleError";
             lblBookTitleError.Size = new Size(0, 37);
@@ -129,7 +133,9 @@
             // lblBookPriceError
             // 
             lblBookPriceError.AutoSize = true;
+            lblBookPriceError.Enabled = false;
             lblBookPriceError.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblBookPriceError.ForeColor = SystemColors.WindowText;
             lblBookPriceError.Location = new Point(579, 481);
             lblBookPriceError.Name = "lblBookPriceError";
             lblBookPriceError.Size = new Size(0, 37);
@@ -139,7 +145,7 @@
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1101, 832);
+            ClientSize = new Size(1169, 832);
             Controls.Add(lblBookPriceError);
             Controls.Add(lblBookTitleError);
             Controls.Add(lblBookISBNError);

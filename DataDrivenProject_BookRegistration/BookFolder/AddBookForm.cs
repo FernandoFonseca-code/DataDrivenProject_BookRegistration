@@ -24,8 +24,8 @@ namespace DataDrivenProject_BookRegistration
                 Book newBook = new(txtBookISBN.Text, txtBookTitle.Text, double.Parse(numbxBookPrice.Text));
                 // test code
                 //MessageBox.Show($"Title of book is {txtBookTitle.Text} with ISBN {txtBookISBN.Text} and a price of ${numbxBookPrice.Text}");
-                //BookTable.Add(newBook);
-                /BookTable.GetAllBooks();
+                BookTable.Add(newBook);
+                BookTable.GetAllBooks();
                 Close();
             }
 
@@ -38,11 +38,11 @@ namespace DataDrivenProject_BookRegistration
                         lblBookISBNError.Text = exception.Message;
                         txtBookISBN.Focus();
                         break;
-                    case "* Title cannot be empty or null":
+                    case "* Title cannot be empty/null":
                         lblBookTitleError.Text = exception.Message;
                         txtBookTitle.Focus();
                         break;
-                    case "* Price cannot be empty or null":
+                    case "* Price cannot be empty/null or free":
                         lblBookPriceError.Text = exception.Message;
                         numbxBookPrice.Focus();
                         break;

@@ -11,25 +11,17 @@ namespace DataDrivenProject_BookRegistration
     {
         public static bool ValidateBookISBN(string bookISBN)
         {
-            return bookISBN.Length == 10 || bookISBN.Length == 13 && bookISBN.All(char.IsDigit);
+            return bookISBN.Length == 10 || bookISBN.Length == 13;
         }
 
         public static bool ValidateBookTitle(string title)
         {
-            if (String.IsNullOrWhiteSpace(title))
-            {
-                return false;
-            }
-            return true;
+            return !String.IsNullOrWhiteSpace(title);
         }
 
         public static bool ValidateBookPrice(double price)
         {
-            if (price <= 0)
-            {
-                return false;
-            }
-            return true;
+            return price > 0;
         }
     }
 }
