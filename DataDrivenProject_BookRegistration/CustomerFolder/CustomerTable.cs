@@ -40,48 +40,33 @@ namespace DataDrivenProject_BookRegistration
         public static List<Customer> GetAllCustomers()
         {
             List<Customer> customers = new List<Customer>();
-            
+
+            // Ensure the connection is assigned
+            DBHelper.SelectCmd.Connection = DBHelper.Connection;
+
             DBHelper.SelectCmd.CommandText = """
                                             SELECT * 
                                             FROM Customer
                                             """;
             DBHelper.Connection.Open();
 
-            SqlDataReader reader = DBHelper.SelectCmd.ExecuteReader();
-            while (reader.Read())
+            using (SqlDataReader reader = DBHelper.SelectCmd.ExecuteReader())
             {
-                Customer c = new Customer()
+                while (reader.Read())
                 {
-                    CustomerID = (int)reader["CustomerID"],
-                    Title = reader["Title"].ToString(),
-                    FirstName = reader["FirstName"].ToString(),
-                    LastName = reader["LastName"].ToString(),
-                    DateOfBirth = (DateTime)reader["DateOfBirth"]
-                };
-                customers.Add(c);
+                    Customer c = new Customer()
+                    {
+                        CustomerID = (int)reader["CustomerID"],
+                        Title = reader["Title"].ToString(),
+                        FirstName = reader["FirstName"].ToString(),
+                        LastName = reader["LastName"].ToString(),
+                        DateOfBirth = (DateTime)reader["DateOfBirth"]
+                    };
+                    customers.Add(c);
+                }
             }
             DBHelper.Connection.Close();
             return customers;
-        }
-
-        public static void Update(Customer c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static void Delete(Customer c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static Customer GetCustomer(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
